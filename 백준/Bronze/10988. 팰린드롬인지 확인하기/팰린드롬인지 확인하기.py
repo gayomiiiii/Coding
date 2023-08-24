@@ -1,8 +1,6 @@
 a = input()
 
-for i in range(len(a)):
-    if a[i] != a[len(a)-i-1]:
-        print("0")
-        break
+if a == a[::-1]:
+    print('1')
 else:
-    print("1")
+    print('0')
