@@ -1,21 +1,17 @@
-# 9012번 - 괄호
+# 9012번 괄호
+a = int(input())
 
-t = int(input())
+for i in range(a):
+    s = input()
+    ans = []
 
-for i in range(t):
-    stack = []
-    a = input()
-    for j in a:
+    for j in s:
         if j == '(':
-            stack.append(j)
-        elif j ==')':
-            if stack:
-                stack.pop()
-            else:
-                print('NO')
-                break
-    else:
-        if not stack:
-            print('YES')
+            ans.append(j)
         else:
-            print('NO')
+            if ans:
+                ans.pop()
+            else:
+                ans.append(')')
+                break
+    print('YES' if not ans else 'NO')
