@@ -1,27 +1,25 @@
+# 1406번 에디터
+
 import sys
 
-left_stack = list(sys.stdin.readline().strip())  # 초기 문자열을 왼쪽 스택에 저장
-right_stack = []
 
-M = int(sys.stdin.readline().strip())  # 명령어 개수
+left = list(sys.stdin.readline().strip())
+right = []
+num = int(sys.stdin.readline())
 
-for _ in range(M):
-    cmd = sys.stdin.readline().strip().split()
-    
-    if cmd[0] == 'L':  
-        if left_stack:
-            right_stack.append(left_stack.pop())
-    
-    elif cmd[0] == 'D':  
-        if right_stack:
-            left_stack.append(right_stack.pop())
-    
-    elif cmd[0] == 'B':  
-        if left_stack:
-            left_stack.pop()
-    
-    elif cmd[0] == 'P':  
-        left_stack.append(cmd[1])  
+for _ in range(num):
+    word = sys.stdin.readline().strip()
 
-# 결과 출력
-print("".join(left_stack + right_stack[::-1]))
+    if word[0] == 'L':
+        if left:
+            right.append(left.pop())
+    elif word[0] == 'D':
+        if right:
+            left.append(right.pop())
+    elif word[0] == 'B':
+        if left:
+            left.pop()
+    elif word[0] == 'P':
+        left.append(word[2])
+
+print("".join(left + right[::-1]))
