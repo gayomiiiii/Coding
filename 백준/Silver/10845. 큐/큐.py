@@ -16,19 +16,10 @@ for _ in range(n):
         else:
             print(-1)
     elif word[0] == 'empty':
-        if ans:
-            print(0)
-        else:
-            print(1)
+        print(0 if ans else 1)
     elif word[0] == 'size':
         print(len(ans))
     elif word[0] =='front':
-        if ans:
-            print(ans[0])
-        else:
-            print(-1)
+        print(ans[0] if ans else -1)
     elif word[0] == 'back':
-        if ans:
-            print(ans[-1])
-        else:
-            print(-1)
+        print(ans[-1] if ans else -1)
