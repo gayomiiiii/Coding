@@ -1,19 +1,17 @@
-# 1978번 - 소수 찾기
+# 1978번 소수찾기
 
 n = int(input())
-a = list(map(int, input().split()))
-cnt = []
+numbers = list(map(int, input().split()))
+ans = []
 
-for i in a:
+for i in numbers:
     if i != 1:
-        is_prime_flag = True
-        for j in range(2, i):
+        is_prime = True
+        for j in range(2, int(i**0.5)+1):
             if i % j == 0:
-                is_prime_flag = False
+                is_prime = False
                 break
-        if is_prime_flag:
-            if i not in cnt:
-                cnt.append(i)
+        if is_prime:
+            ans.append(i)
 
-
-print(len(cnt))
+print(len(ans))
